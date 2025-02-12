@@ -14,6 +14,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # permissions for Deno Deploy
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - uses: actions/checkout@v2
@@ -49,3 +53,10 @@ jobs:
           force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Deploy to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: my-arxiv-davidingplus
+          entrypoint: https://deno.land/std/http/file_server.ts
+          root: ./target
