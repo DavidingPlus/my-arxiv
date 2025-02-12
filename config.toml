@@ -1,6 +1,6 @@
 site_title = "MyArxiv"
 limit_days = 7
-cache_url = "https://davidingplus.github.io/my-arxiv/cache.json"
+cache_url = "https://my-arxiv.davidingplus.cn/cache.json"
 
 # see more on: https://arxiv.org/category_taxonomy
 
