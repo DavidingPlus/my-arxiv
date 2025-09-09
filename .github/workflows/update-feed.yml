@@ -41,6 +41,8 @@ jobs:
           chmod +x arxivfeed
       - name: Build rss
         run: ./arxivfeed
+      - name: Copy Azure SWA workflow to target
+        run: cp azure-static-web-apps-lemon-glacier-047586300.yml target/
       - uses: actions/upload-artifact@v4
         with:
           name: target
