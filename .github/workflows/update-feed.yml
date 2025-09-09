@@ -45,8 +45,9 @@ jobs:
         env:
           WORKSPACE: ${{ github.workspace }}
         run: |
-          mkdir -p ${WORKSPACE}/target
-          cp ${WORKSPACE}/.github/workflows/azure-static-web-apps-lemon-glacier-047586300.yml ${WORKSPACE}/target/
+          mkdir -p ${WORKSPACE}/target/
+          mkdir -p ${WORKSPACE}/target/.github/workflows/
+          cp ${WORKSPACE}/.github/workflows/azure-static-web-apps-lemon-glacier-047586300.yml ${WORKSPACE}/target/.github/workflows/
       - uses: actions/upload-artifact@v4
         with:
           name: target
